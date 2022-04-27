@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.client.main');
 });
+
+//Admin
+Route::prefix('admin')->middleware('authadmin')->group(function(){
+
+});
+
+//Shop
+Route::prefix('shop/')->middleware('authshop')->group(function(){
+
+});
+
+//403
+Route::get('403',function(){
+    return view('403');
+})->name('403');
